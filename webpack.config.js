@@ -1,7 +1,9 @@
-import webpack from 'webpack'
+import webpack from 'webpack';
+import path from 'path';
 
 module.exports = {
     entry: './src/index.js',
+    mode: 'development',
     output: {
         path: '__dirname' + '/.dist',
         publicPath: '/',
@@ -17,7 +19,8 @@ module.exports = {
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                use: ['babel-loader']
+                use: ['babel-loader'],
+                options: {presets: ['@babel/env']}
             }
         ]
     }
