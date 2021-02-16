@@ -1,3 +1,5 @@
+import webpack from 'webpack'
+
 module.exports = {
     entry: './src/index.js',
     output: {
