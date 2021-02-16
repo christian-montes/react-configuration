@@ -5,13 +5,17 @@ module.exports = {
     entry: './src/index.js',
     mode: 'development',
     output: {
-        path: '__dirname' + '/.dist',
-        publicPath: '/',
+        path: path.resolve(__dirname, 'dist/'),
+        publicPath: '/dist/',
         filename: 'bundle.js'
     },
 
+    resolve: {extensions: ['*', ".js", '.jsx']},
+
     devServer: {
-        contentBase: './dist',
+        contentBase: path.join(__dirname, 'public/'),
+        port: 3000,
+        publicPath: 'http://localhost:3000/dist/'
     },
 
     module: {
